@@ -32,8 +32,5 @@ public class RightTriangle {
         else {
             System.out.println(false);
         }
-
-
-
     }
 }
