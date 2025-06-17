@@ -1,5 +1,3 @@
-package module1;
-
 import java.util.Scanner;
 
 /* specifies the level of red (R), green (G), and blue (B) on an integer scale from 0 to 255.
@@ -8,10 +6,9 @@ Specifies the level of cyan (C), magenta (M), yellow (Y), and black (K) on a rea
  */
 
 
-public class TypeConversion {
+public class CMYKtoRGB {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         System.out.println("please input the level of cyan, magenta, yellow, and black from 0.0 to 1.0");
 
         double cyan = input.nextDouble();
@@ -19,11 +16,6 @@ public class TypeConversion {
         double yellow = input.nextDouble();
         double black = input.nextDouble();
 
-        CMYKtoRGB(cyan, magenta, yellow, black);
-
-    }
-
-    public static void CMYKtoRGB(double cyan, double magenta, double yellow, double black) {
         double white = 1 - black;
         double red = 255 * white * (1 - cyan);
         double green = 255 * white * (1 - magenta);
@@ -32,5 +24,6 @@ public class TypeConversion {
         System.out.println("red = " + (int) red);
         System.out.println("green = " + (int) green);
         System.out.println("blue = " + (int) blue);
+
     }
 }

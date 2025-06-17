@@ -1,5 +1,3 @@
-package module1;
-
 import java.util.Scanner;
 
 /* Write a program HelloGoodbye.java that takes two names as command-line arguments and prints hello
@@ -9,7 +7,7 @@ import java.util.Scanner;
  */
 
 
-public class HelloGoodBye {
+public class HelloGoodbye {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("please type hello and followed by your name and your friend's name");
@@ -28,10 +26,6 @@ public class HelloGoodBye {
         // get the second name after the index of " and " then we add 5 because it has 5 chars
         String secondName = names.substring(and + 5);
 
-        sayGoodbye(firstName, secondName);
-    }
-
-    public static void sayGoodbye(String firstName, String secondName) {
         System.out.println("Goodbye " + secondName + " and " + firstName + ".");
 
     }

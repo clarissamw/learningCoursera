@@ -1,5 +1,3 @@
-package module1;
-
 import java.util.Scanner;
 
 /*Write a program module1.RightTriangle that takes three int command-line arguments
@@ -11,7 +9,6 @@ The following two conditions are necessary and sufficient:
 - The sum of the squares of two of the integers must equal the square of the third integer.
 */
 
-
 public class RightTriangle {
     public static void main(String[] args) {
 
@@ -22,10 +19,6 @@ public class RightTriangle {
         int b = scanner.nextInt();
         int c = scanner.nextInt();
 
-        isTwoSquaresOfTwoIntegersEqualTheThirdInteger(a, b, c);
-    }
-
-    public static void isTwoSquaresOfTwoIntegersEqualTheThirdInteger(int a, int b, int c) {
-        System.out.println(Math.pow(a,2) + Math.pow(b,2) == Math.pow(c,2));
+        System.out.println(Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2));
     }
 }
