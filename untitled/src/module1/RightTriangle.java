@@ -1,6 +1,8 @@
+package module1;
+
 import java.util.Scanner;
 
-/*Write a program RightTriangle that takes three int command-line arguments
+/*Write a program module1.RightTriangle that takes three int command-line arguments
 and determines whether they constitute the side lengths of some right triangle.
 a^2 + b^2 = c^2
 

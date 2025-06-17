@@ -1,3 +1,5 @@
+package module1;
+
 import java.util.Scanner;
 
 /* Write a program HelloGoodbye.java that takes two names as command-line arguments and prints hello

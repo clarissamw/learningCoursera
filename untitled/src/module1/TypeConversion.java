@@ -1,3 +1,5 @@
+package module1;
+
 import java.util.Scanner;
 
 /* specifies the level of red (R), green (G), and blue (B) on an integer scale from 0 to 255.
