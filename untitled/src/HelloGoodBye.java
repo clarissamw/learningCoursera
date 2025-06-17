@@ -14,14 +14,17 @@ public class HelloGoodBye {
 
         String input = scanner.nextLine();
 
-        if(input.endsWith(".")) {
-            input = input.substring(0,input.length()-1);
-        }
+        // to collect the names
+        String names = input.substring(5,input.length()-1);
 
-        String[] cleanInput = input.split(" ");
+        // to find the index where the and is
+        int and = names.indexOf(" and ");
 
-        String firstName = cleanInput[1];
-        String secondName = cleanInput[3];
+        // get the first name from index 0 until the index of and
+        String firstName = names.substring(0, and);
+
+        // get the second name after the index of " and " then we add 5 because it has 5 chars
+        String secondName = names.substring(and + 5);
 
         sayGoodbye(firstName, secondName);
     }
