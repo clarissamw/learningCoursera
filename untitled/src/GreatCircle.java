@@ -1,14 +1,11 @@
-import java.util.Scanner;
-
 public class GreatCircle {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         System.out.println("insert the two shortest paths between (x1, y1) and (x2, y2)");
 
-        double x1 = Math.toRadians(input.nextDouble());
-        double y1 = Math.toRadians(input.nextDouble());
-        double x2 = Math.toRadians(input.nextDouble());
-        double y2 = Math.toRadians(input.nextDouble());
+        double x1 = Math.toRadians(Double.parseDouble(args[0]));
+        double y1 = Math.toRadians(Double.parseDouble(args[1]));
+        double x2 = Math.toRadians(Double.parseDouble(args[2]));
+        double y2 = Math.toRadians(Double.parseDouble(args[3]));
 
         double r = 6371;
 
@@ -22,7 +19,7 @@ public class GreatCircle {
         double a = Math.pow(Math.sin(sin1), 2);
 
         // formula of the second sin square
-        double b = Math.cos(x1) * Math.cos(x2) * Math.pow(Math.sin(sin2),2);
+        double b = Math.cos(x1) * Math.cos(x2) * Math.pow(Math.sin(sin2), 2);
 
         // formula after the arcsin
         double arcsin = Math.sqrt(a + b);

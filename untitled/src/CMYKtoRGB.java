@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /* specifies the level of red (R), green (G), and blue (B) on an integer scale from 0 to 255.
 The primary format for publishing books and magazines—known as the CMYK format—
 Specifies the level of cyan (C), magenta (M), yellow (Y), and black (K) on a real scale from 0.0 to 1.0.
@@ -8,13 +6,12 @@ Specifies the level of cyan (C), magenta (M), yellow (Y), and black (K) on a rea
 
 public class CMYKtoRGB {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         System.out.println("please input the level of cyan, magenta, yellow, and black from 0.0 to 1.0");
 
-        double cyan = input.nextDouble();
-        double magenta = input.nextDouble();
-        double yellow = input.nextDouble();
-        double black = input.nextDouble();
+        double cyan = Double.parseDouble(args[0]);
+        double magenta = Double.parseDouble(args[1]);
+        double yellow = Double.parseDouble(args[2]);
+        double black = Double.parseDouble(args[3]);
 
         double white = 1 - black;
         double red = 255 * white * (1 - cyan);

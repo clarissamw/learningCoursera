@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /* Write a program HelloGoodbye.java that takes two names as command-line arguments and prints hello
  and goodbye messages as shown below
  (with the names for the hello message in the same order as the command-line arguments
@@ -9,13 +7,12 @@ import java.util.Scanner;
 
 public class HelloGoodbye {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("please type hello and followed by your name and your friend's name");
 
-        String input = scanner.nextLine();
+        String input = args[0];
 
         // to collect the names
-        String names = input.substring(5,input.length()-1);
+        String names = input.substring(5, input.length()-1);
 
         // to find the index where the and is
         int and = names.indexOf(" and ");
