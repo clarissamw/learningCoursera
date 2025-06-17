@@ -5,8 +5,6 @@ Specifies the level of cyan (C), magenta (M), yellow (Y), and black (K) on a rea
 
 public class CMYKtoRGB {
     public static void main(String[] args) {
-        System.out.println("please input the level of cyan, magenta, yellow, and black from 0.0 to 1.0");
-
         double cyan = Double.parseDouble(args[0]);
         double magenta = Double.parseDouble(args[1]);
         double yellow = Double.parseDouble(args[2]);
