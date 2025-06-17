@@ -5,7 +5,7 @@ public class GreatCircle {
         double x2 = Math.toRadians(Double.parseDouble(args[2]));
         double y2 = Math.toRadians(Double.parseDouble(args[3]));
 
-        double r = 6371;
+        double r = 6371.0;
 
         // formula for the first sin
         double sin1 = (x2 - x1)/2;
