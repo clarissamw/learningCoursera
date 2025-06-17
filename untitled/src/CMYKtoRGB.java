@@ -3,7 +3,6 @@ The primary format for publishing books and magazines—known as the CMYK format
 Specifies the level of cyan (C), magenta (M), yellow (Y), and black (K) on a real scale from 0.0 to 1.0.
  */
 
-
 public class CMYKtoRGB {
     public static void main(String[] args) {
         System.out.println("please input the level of cyan, magenta, yellow, and black from 0.0 to 1.0");

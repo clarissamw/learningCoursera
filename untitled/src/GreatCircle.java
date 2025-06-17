@@ -1,7 +1,5 @@
 public class GreatCircle {
     public static void main(String[] args) {
-        System.out.println("insert the two shortest paths between (x1, y1) and (x2, y2)");
-
         double x1 = Math.toRadians(Double.parseDouble(args[0]));
         double y1 = Math.toRadians(Double.parseDouble(args[1]));
         double x2 = Math.toRadians(Double.parseDouble(args[2]));

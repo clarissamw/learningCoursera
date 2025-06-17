@@ -7,22 +7,10 @@
 
 public class HelloGoodbye {
     public static void main(String[] args) {
-        System.out.println("please type hello and followed by your name and your friend's name");
+        String firstName = args[0];
+        String secondName = args[1];
 
-        String input = args[0];
-
-        // to collect the names
-        String names = input.substring(5, input.length()-1);
-
-        // to find the index where the and is
-        int and = names.indexOf(" and ");
-
-        // get the first name from index 0 until the index of and
-        String firstName = names.substring(0, and);
-
-        // get the second name after the index of " and " then we add 5 because it has 5 chars
-        String secondName = names.substring(and + 5);
-
+        System.out.println("Hello " + firstName + " and " + secondName + ".");
         System.out.println("Goodbye " + secondName + " and " + firstName + ".");
 
     }
