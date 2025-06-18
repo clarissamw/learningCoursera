@@ -1,12 +1,7 @@
-import java.util.Scanner;
-
 public class BandMatrix {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int size = scanner.nextInt();
-    int width = scanner.nextInt();
-//    int size = Integer.parseInt(args[0]);
-//    int width = Integer.parseInt(args[1]);
+    int size = Integer.parseInt(args[0]);
+    int width = Integer.parseInt(args[1]);
 
     // for row
     for(int i = 0; i < size; i++) {
@@ -28,6 +23,5 @@ public class BandMatrix {
       // after all column down, we go to the next row
       System.out.println(" ");
     }
-
   }
 }
