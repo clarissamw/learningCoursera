@@ -1,12 +1,10 @@
-import java.util.Scanner;
-
 public class GeneralizedHarmonic {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-//    int firstInput = Integer.parseInt(args[0]);
-//    int secondInput = Integer.parseInt(args[1]);
-    int firstInput = scanner.nextInt();
-    int secondInput = scanner.nextInt();
+//    Scanner scanner = new Scanner(System.in);
+    int firstInput = Integer.parseInt(args[0]);
+    int secondInput = Integer.parseInt(args[1]);
+//    int firstInput = scanner.nextInt();
+//    int secondInput = scanner.nextInt();
     double sum = 0;
 
     for (int n = 1; n <= firstInput; n++) {
