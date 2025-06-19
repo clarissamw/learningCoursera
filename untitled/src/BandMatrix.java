@@ -4,15 +4,15 @@ public class BandMatrix {
     int width = Integer.parseInt(args[1]);
 
     // for row
-    for(int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
 
       // for column
-      for(int j = 0; j < size; j++) {
+      for (int j = 0; j < size; j++) {
 
         // this is the diagonal
         int distance = Math.abs(i - j);
 
-        if(distance > width) {
+        if (distance > width) {
           System.out.print("0  ");
         }
         else {

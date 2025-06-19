@@ -9,12 +9,9 @@ public class GeneralizedHarmonic {
 
     for (int n = 1; n <= firstInput; n++) {
       int divisor = (int) Math.pow(n, secondInput);
-      System.out.println("divisor: " + divisor);
 
       // we need to use 1.0 otherwise it's gonna be integer
       sum += (1.0 / divisor);
-      System.out.println("sum " + sum);
-
     }
     System.out.println(sum);
   }
