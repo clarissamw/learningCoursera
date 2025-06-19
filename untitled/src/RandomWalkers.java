@@ -30,7 +30,7 @@ public class RandomWalkers {
       totalSteps += steps;
       attempt++;
     }
-    System.out.println("average number of steps = " + (double) totalSteps/trial);
+    System.out.println("average number of steps = " + (double) totalSteps / trial);
   }
 
 }
