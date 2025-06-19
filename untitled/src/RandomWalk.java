@@ -1,10 +1,6 @@
-import java.util.Scanner;
-
 public class RandomWalk {
   public static void main(String[] args) {
-//    int r = Integer.parseInt((args[0]));
-    Scanner scanner = new Scanner(System.in);
-    int r = scanner.nextInt();
+    int r = Integer.parseInt((args[0]));
     int x = 0;
     int y = 0;
     int steps = 0;
