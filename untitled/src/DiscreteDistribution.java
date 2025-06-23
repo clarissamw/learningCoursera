@@ -22,8 +22,6 @@ public class DiscreteDistribution {
       cumulative[i] = cumulative[i-1] + distribution[i];
     }
 
-
-
     // random the number
     for (int i = 0; i < slots.length; i++) {
       int r = (int) (Math.random() * sum);
@@ -31,7 +29,7 @@ public class DiscreteDistribution {
       // find which index that the r falls under
       for(int j = 0; j < cumulative.length; j++) {
 
-        // if the r is lesser than the value in the cumulative
+        // if the r is lesser than the value in the cumulative, print the index j
         if(r < cumulative[j]) {
           System.out.println(j + " ");
           break;
