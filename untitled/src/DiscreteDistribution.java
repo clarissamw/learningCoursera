@@ -27,10 +27,10 @@ public class DiscreteDistribution {
       int r = (int) (Math.random() * sum);
 
       // find which index that the r falls under
-      for(int j = 0; j < cumulative.length; j++) {
+      for (int j = 0; j < cumulative.length; j++) {
 
         // if the r is lesser than the value in the cumulative, print the index j
-        if(r < cumulative[j]) {
+        if (r < cumulative[j]) {
           System.out.println(j + " ");
           break;
         }

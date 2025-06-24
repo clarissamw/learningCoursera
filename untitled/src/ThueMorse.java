@@ -17,12 +17,13 @@ public class ThueMorse {
     for (int row = 0; row < input; row++) {
       for (int column = 0; column < input; column++) {
         if (sequence[row] == sequence[column]) {
-          System.out.println("+  ");
+          System.out.print("+  ");
         }
         else {
-          System.out.println("- ");
+          System.out.print("- ");
         }
       }
+      System.out.println();
     }
 
   }

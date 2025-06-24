@@ -20,7 +20,7 @@ public class Birthday {
             int birthday = (int) (Math.random() * days);
 
             // if the birthday on certain date is true, we found a duplicate so we break
-            if (birthdayTaken[birthday] == true) {
+            if (birthdayTaken[birthday]) {
               foundDuplicate = true;
               break;
             } else {
@@ -30,7 +30,7 @@ public class Birthday {
 
           // when there's a duplicate found, we increase the counter of duplicates
           // we calculate after every trial
-        if(foundDuplicate) {
+        if (foundDuplicate) {
           duplicateCount++;
         }
       }
