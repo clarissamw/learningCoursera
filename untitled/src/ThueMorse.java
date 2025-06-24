@@ -1,6 +1,12 @@
+import java.util.Scanner;
+
 public class ThueMorse {
   public static void main(String[] args) {
-    int input = Integer.parseInt(args[0]);
+//    int input = Integer.parseInt(args[0]);
+//    int[] sequence = new int[input];
+
+    Scanner scanner = new Scanner(System.in);
+    int input = scanner.nextInt();
     int[] sequence = new int[input];
 
     // to get the first sequence based on the input
@@ -25,6 +31,5 @@ public class ThueMorse {
       }
       System.out.println();
     }
-
   }
 }
