@@ -1,12 +1,6 @@
-import java.util.Scanner;
-
 public class ThueMorse {
   public static void main(String[] args) {
-//    int input = Integer.parseInt(args[0]);
-//    int[] sequence = new int[input];
-
-    Scanner scanner = new Scanner(System.in);
-    int input = scanner.nextInt();
+    int input = Integer.parseInt(args[0]);
     int[] sequence = new int[input];
     sequence[0] = 0;
 
