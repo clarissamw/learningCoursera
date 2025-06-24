@@ -29,6 +29,7 @@ public class Birthday {
           }
 
           // when there's a duplicate found, we increase the counter of duplicates
+          // we calculate after every trial
         if(foundDuplicate) {
           duplicateCount++;
         }
