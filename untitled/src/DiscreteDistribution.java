@@ -31,7 +31,7 @@ public class DiscreteDistribution {
 
         // if the r is lesser than the value in the cumulative, print the index j
         if (r < cumulative[j]) {
-          System.out.println(j + " ");
+          System.out.println((j+1) + " ");
           break;
         }
       }
