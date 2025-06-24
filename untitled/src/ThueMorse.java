@@ -11,7 +11,6 @@ public class ThueMorse {
       for (int i = 0; i < length && i < length + 1; i++) {
         sequence[length+i] = 1 - sequence[i];
       }
-
       length *= 2;
     }
 
