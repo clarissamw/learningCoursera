@@ -2,44 +2,44 @@ public class Birthday {
   public static void main(String[] args) {
     int days = Integer.parseInt(args[0]);
     int trials = Integer.parseInt(args[1]);
+
     double probability = 0.0;
-    int people = 0;
+    int people = 1;
 
-
-    // plus 2 because if we only have exact days, that means no duplicate. if we add 1 more,
-    // there's a chance of array out of bounds
-    // to store how many trials we do to be finally able to find a share birthday
-    // index 2 and the value let's say 100 means
-    // we have 100 times out of million trials to put 2 people and they already share the birthday
-
-    int[] count = new int[days + 2];
-
-    System.out.printf("%-10s %-10s %-10s\n", "1", "0", "0.0");
-
+    // first we check whether the probability is 50%
     while (probability < 0.5) {
-      people++;
+      int duplicateCount = 0;
+
+      // n number of trials we always reset the boolean and the foundDuplicate
       for (int i = 0; i < trials; i++) {
         boolean[] birthdayTaken = new boolean[days];
-        int birthday = (int) (Math.random() * days);
-        if (birthdayTaken[birthday] == true) {
-          count[people] += 1;
-          break;
-        } else {
-          birthdayTaken[birthday] = true;
+        boolean foundDuplicate = false;
+
+        // i number of people for each trial until it reaches the number of trial
+          for (int p = 0; p < people; p++) {
+            int birthday = (int) (Math.random() * days);
+
+            // if the birthday on certain date is true, we found a duplicate so we break
+            if (birthdayTaken[birthday] == true) {
+              foundDuplicate = true;
+              break;
+            } else {
+              birthdayTaken[birthday] = true;
+            }
+          }
+
+          // when there's a duplicate found, we increase the counter of duplicates
+        if(foundDuplicate) {
+          duplicateCount++;
         }
       }
 
+      // count the probability after running x trials at i people
+      probability = (double) duplicateCount / trials;
+      System.out.printf("%-10s %-10s %-10s\n", people, duplicateCount, probability);
 
-      System.out.printf("%-10s %-10s %-10s\n", people, count, probability);
-    }
-
-    // calculate the probability with the sum of all current trials
-//    int sum = 0;
-//    double probability = 0.0;
-//    for (int i = 0; i < count.length; i++) {
-//      sum += count[i];
-//      probability = sum/trials;
-
+      people++;
     }
   }
+}
 
