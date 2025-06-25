@@ -1,14 +1,8 @@
-import java.util.Scanner;
-
 public class Minesweeper {
   public static void main(String[] args) {
-//    int row = Integer.parseInt(args[0]);
-//    int column = Integer.parseInt(args[1]);
-//    int numberOfMines = Integer.parseInt(args[3]);
-    Scanner scanner = new Scanner(System.in);
-    int row = scanner.nextInt();
-    int column = scanner.nextInt();
-    int numberOfMines = scanner.nextInt();
+    int row = Integer.parseInt(args[0]);
+    int column = Integer.parseInt(args[1]);
+    int numberOfMines = Integer.parseInt(args[3]);
     int[][] area = new int[row][column];
     int minesCounter = 0;
 
@@ -38,9 +32,12 @@ public class Minesweeper {
           // top-right, top-left, bottom-left, bottom-right, top, bottom, left, right
           int[] drow = {-1, -1, 1, 1, -1, 1, 0, 0};
           int[] dcol = {1, -1, -1, 1, 0, 0, -1, 1};
+
+          // checking the surrounding
           int newRow = i + drow[loop];
           int newCol = j + dcol[loop];
 
+          // make sure that the surrounding is still inside the area
           if (newRow >= 0 && newRow < row && newCol >= 0 && newCol < column) {
             if (area[newRow][newCol] == -1) {
               area[i][j]++;
