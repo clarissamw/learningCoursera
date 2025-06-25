@@ -4,7 +4,7 @@ public class Minesweeper {
   public static void main(String[] args) {
     int row = Integer.parseInt(args[0]);
     int column = Integer.parseInt(args[1]);
-    int numberOfMines = Integer.parseInt(args[3]);
+    int numberOfMines = Integer.parseInt(args[2]);
     int[][] area = new int[row][column];
     int minesCounter = 0;
 
