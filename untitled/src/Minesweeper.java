@@ -1,8 +1,14 @@
+import java.util.Scanner;
+
 public class Minesweeper {
   public static void main(String[] args) {
-    int row = Integer.parseInt(args[0]);
-    int column = Integer.parseInt(args[1]);
-    int numberOfMines = Integer.parseInt(args[3]);
+//    int row = Integer.parseInt(args[0]);
+//    int column = Integer.parseInt(args[1]);
+//    int numberOfMines = Integer.parseInt(args[3]);
+    Scanner scanner = new Scanner(System.in);
+    int row = scanner.nextInt();
+    int column = scanner.nextInt();
+    int numberOfMines = scanner.nextInt();
     int[][] area = new int[row][column];
     int minesCounter = 0;
 
@@ -23,85 +29,23 @@ public class Minesweeper {
 
     for (int i = 0; i < row; i++) {
       for (int j = 0; j < column; j++) {
-
         if (area[i][j] == -1) {
           continue;
         }
-        // top-left corner
-        if (i == 0 && j == 0) {
-          if (area[i][j + 1] == -1) area[i][j] += 1; // right
-          if (area[i+1][j+1] == -1) area[i][j] += 1; //  right bottom diagonal
-          if (area[i+1][j] == -1) area[i][j] += 1; // below
-        }
 
-        // first row without corner
-        else if (i == 0 && j > 0 && j < column - 1) {
-          if (area[i][j - 1] == -1) area[i][j] += 1;  // left
-          if (area[i + 1][j] == -1) area[i][j] += 1; // bottom
-          if (area[i][j + 1] == -1) area[i][j] += 1; // right
-          if (area[i + 1][j - 1] == -1) area[i][j] += 1;  // left bottom diagonal
-          if (area[i + 1][j - 1] == -1) area[i][j] += 1; // right bottom diagonal
-        }
+        int direction = 8;
+        for (int loop = 0; loop < direction; loop++) {
+          // top-right, top-left, bottom-left, bottom-right, top, bottom, left, right
+          int[] drow = {-1, -1, 1, 1, -1, 1, 0, 0};
+          int[] dcol = {1, -1, -1, 1, 0, 0, -1, 1};
+          int newRow = i + drow[loop];
+          int newCol = j + dcol[loop];
 
-        // first column without corner
-        else if (j == 0 && i > 0 && i < row -1) {
-          if (area[i - 1][j] == -1) area[i][j] += 1;  // top element
-          if (area[i - 1][j + 1] == -1) area[i][j] += 1; // top right diagonal
-          if (area[i][j + 1] == -1) area[i][j] += 1; // right
-          if (area[i + 1][j + 1] == -1) area[i][j] += 1; // bottom right diagonal
-          if (area[i + 1][j] == -1) area[i][j] += 1; // below
-        }
-
-        // top-right corner
-        else if (i == 0 && j == column - 1) {
-          if (area[i][j - 1] == -1) area[i][j] += 1; // left
-          if (area[i + 1][j] == -1) area[i][j] += 1; // below
-          if (area[i + 1][j - 1] == -1) area[i][j] += 1; // bottom left diagonal
-        }
-
-        // bottom-left corner
-        else if (i == row - 1 && j == 0) {
-          if (area[i - 1][j] == -1) area[i][j] += 1; // top
-          if (area[i][j + 1] == -1) area[i][j] += 1; // right
-          if (area[i - 1][j + 1] == -1) area[i][j] += 1; // top right diagonal
-        }
-
-        // bottom-right corner
-        else if (i == row - 1 && j == column - 1) {
-          if (area[i - 1][j] == -1) area[i][j] += 1; // top
-          if (area[i][j - 1] == -1) area[i][j] += 1; // left
-          if (area[i - 1][j - 1] == -1) area[i][j] += 1; // top left diagonal
-        }
-
-        // last column without corners
-        else if (j == column - 1 && i > 0 && i < row - 1) {
-          if (area[i - 1][j] == -1) area[i][j] += 1;
-          if (area[i + 1][j] == -1) area[i][j] += 1;
-          if (area[i - 1][j - 1] == -1) area[i][j] += 1;
-          if (area[i][j - 1] == -1) area[i][j] += 1;
-          if (area[i + 1][j - 1] == -1) area[i][j] += 1;
-        }
-
-        // last row without corners
-        else if (i == row - 1 && j > 0 && j < column - 1) {
-          if (area[i][j - 1] == -1) area[i][j] += 1;
-          if (area[i][j + 1] == -1) area[i][j] += 1;
-          if (area[i - 1][j - 1] == -1) area[i][j] += 1;
-          if (area[i - 1][j] == -1) area[i][j] += 1;
-          if (area[i - 1][j + 1] == -1) area[i][j] += 1;
-        }
-
-        // center, ensuring we're not on the top row, first column, etc
-        else {
-          if (i - 1 >= 0 && j - 1 >= 0 && area[i - 1][j - 1] == -1) area[i][j]++; // top left diagonal, not on the first row, not on the first column,
-          if (i - 1 >= 0 && area[i - 1][j] == -1) area[i][j]++; // top, not on the first row
-          if (i - 1 >= 0 && j + 1 < column && area[i - 1][j + 1] == -1) area[i][j]++; // top right diagonal, not on the first row
-          if (j - 1 >= 0 && area[i][j - 1] == -1) area[i][j]++; // left, not on the first column
-          if (j + 1 < column && area[i][j + 1] == -1) area[i][j]++;
-          if (i + 1 < row && j - 1 >= 0 && area[i + 1][j - 1] == -1) area[i][j]++;
-          if (i + 1 < row && area[i + 1][j] == -1) area[i][j]++;
-          if (i + 1 < row && j + 1 < column && area[i + 1][j + 1] == -1) area[i][j]++;
-
+          if (newRow >= 0 && newRow < row && newCol >= 0 && newCol < column) {
+            if (area[newRow][newCol] == -1) {
+              area[i][j]++;
+            }
+          }
         }
       }
     }
