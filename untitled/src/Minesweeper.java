@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Minesweeper {
   public static void main(String[] args) {
     int row = Integer.parseInt(args[0]);
@@ -8,8 +10,9 @@ public class Minesweeper {
 
     // put the mines in random cells
     while (minesCounter < numberOfMines) {
-      int r = (int) (Math.random() * row);
-      int c = (int) (Math.random() * column);
+      Random rand = new Random();
+      int r = rand.nextInt(row);
+      int c = rand.nextInt(column);
 
       if (area[r][c] == 0) {
         area[r][c] = -1;
@@ -27,11 +30,12 @@ public class Minesweeper {
           continue;
         }
 
-        int direction = 8;
+        // top-right, top-left, bottom-left, bottom-right, top, bottom, left, right
+        int[] drow = {-1, -1, 1, 1, -1, 1, 0, 0};
+        int[] dcol = {1, -1, -1, 1, 0, 0, -1, 1};
+        int direction = drow.length;
         for (int loop = 0; loop < direction; loop++) {
-          // top-right, top-left, bottom-left, bottom-right, top, bottom, left, right
-          int[] drow = {-1, -1, 1, 1, -1, 1, 0, 0};
-          int[] dcol = {1, -1, -1, 1, 0, 0, -1, 1};
+
 
           // checking the surrounding
           int newRow = i + drow[loop];
