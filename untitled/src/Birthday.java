@@ -1,7 +1,13 @@
+import java.util.Scanner;
+
 public class Birthday {
   public static void main(String[] args) {
     int days = Integer.parseInt(args[0]);
     int trials = Integer.parseInt(args[1]);
+//
+//    Scanner scanner = new Scanner(System.in);
+//    int days = scanner.nextInt();
+//    int trials = scanner.nextInt();
 
     double probability = 0.0;
     int people = 1;
