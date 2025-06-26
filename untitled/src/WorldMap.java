@@ -34,6 +34,10 @@ public class WorldMap {
       int vertex = scanner.nextInt();
       vertexCounts[regionIndex] = vertex;
 
+      // initialize the array first
+      xAxis[regionIndex] = new double[vertex];
+      yAxis[regionIndex] = new double[vertex];
+
       // read the coordinate
         for (int i = 0; i < vertex; i++) {
           double x = scanner.nextDouble();
